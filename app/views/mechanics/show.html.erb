@@ -1,0 +1,15 @@
+<h1><%= @mechanic.name %></h1>
+<h3><%= @mechanic.experience %></h3>
+<h3>Assigned Rides: </h3>
+<ul class="rides">
+  <% @mechanic.rides.each do |ride| %>
+  <li><%= ride.name %></li>
+  <% end %>
+</ul><br>
+
+<h4>Assign New Ride</h4>
+<%= form_tag "/mechanics/#{@mechanic.id}", method: :patch do %>
+  <%= label_tag :ride_id, "Ride ID:" %>
+  <%= text_field_tag :ride_id %><br><br>
+  <%= submit_tag "Submit" %>
+<% end %>
