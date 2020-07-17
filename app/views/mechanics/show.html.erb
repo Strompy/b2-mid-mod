@@ -8,7 +8,7 @@
 </ul><br>
 
 <h4>Assign New Ride</h4>
-<%= form_tag "/mechanics/#{@mechanic.id}", method: :patch do %>
+<%= form_tag "/mechanics/#{@mechanic.id}/rides", method: :post do %>
   <%= label_tag :ride_id, "Ride ID:" %>
   <%= text_field_tag :ride_id %><br><br>
   <%= submit_tag "Submit" %>
